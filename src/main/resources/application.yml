@@ -1,0 +1,33 @@
+spring:
+  # Primary datasource configuration for PostgreSQL
+  datasource:
+    url: jdbc:postgresql://localhost:5433/blog
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  # MongoDB configuration for storing posts and comments
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/blog
+      database: blog
+
+# Swagger/OpenAPI configuration
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+server:
+  port: 8084
+
+  #http://localhost:8084/swagger-ui/index.html#/
